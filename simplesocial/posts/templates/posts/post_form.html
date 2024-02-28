@@ -1,0 +1,16 @@
+{% extends "posts/post_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block post_content %}
+<h4>Create a new Post</h4>
+<form id="postForm" action="{% url 'posts:create' %}" method="post">
+	{% csrf_token %}
+	{{ form|crispy }}
+	<div class = "d-grid gap-2">
+		<input class = "btn btn-primary btn-large" type = "submit" value = "Post">
+	</div>
+</form>
+
+
+
+{% endblock %}
